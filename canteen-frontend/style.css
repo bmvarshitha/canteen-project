@@ -1,0 +1,544 @@
+/* ─────────────────────────────────────────
+   FONTS & RESET
+───────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* ─────────────────────────────────────────
+   LOGIN / PAYMENT / TOKEN / HISTORY PAGE
+───────────────────────────────────────── */
+.login-body {
+    min-height: 100vh;
+    background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
+    background-size: cover;
+    background-position: center;
+}
+
+.login-bg-overlay {
+    min-height: 100vh;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-box {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 18px;
+    width: 340px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.login-box.wide {
+    width: 420px;
+}
+
+/* BRAND */
+.brand { margin-bottom: 20px; }
+.brand-icon { font-size: 40px; }
+.brand h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #1a1a1a;
+    margin: 5px 0 2px;
+}
+.tagline {
+    font-size: 13px;
+    color: #888;
+}
+
+/* TABS */
+.tab-row {
+    display: flex;
+    background: #f0f0f0;
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+.tab-btn {
+    flex: 1;
+    padding: 9px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #666;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.tab-btn.active {
+    background: #ff4d4d;
+    color: white;
+    box-shadow: 0 2px 8px rgba(255,77,77,0.3);
+}
+
+/* INPUTS */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 7px 0;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border 0.2s;
+    background: #fafafa;
+}
+input:focus, select:focus {
+    border-color: #ff4d4d;
+    background: white;
+}
+
+.hint {
+    font-size: 12px;
+    color: #aaa;
+    margin: 4px 0 10px;
+}
+
+/* BUTTONS */
+.login-btn {
+    width: 100%;
+    padding: 13px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s, transform 0.1s;
+}
+.login-btn:hover { background: #e63939; transform: translateY(-1px); }
+
+.back-btn {
+    width: 100%;
+    padding: 11px;
+    background: #f0f0f0;
+    color: #555;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+}
+.back-btn:hover { background: #e0e0e0; }
+
+/* ─────────────────────────────────────────
+   NAVBAR
+───────────────────────────────────────── */
+.navbar {
+    background: #ff4d4d;
+    color: white;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(255,77,77,0.3);
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+}
+.nav-btn {
+    padding: 7px 14px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.35); }
+.nav-btn.logout { background: rgba(0,0,0,0.2); }
+
+/* ─────────────────────────────────────────
+   MENU PAGE
+───────────────────────────────────────── */
+.menu-body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.menu-container {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.menu-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 26px;
+}
+.menu-header input {
+    width: 220px;
+    background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    color: white;
+    margin: 0;
+}
+.menu-header input::placeholder { color: rgba(255,255,255,0.6); }
+.menu-header input:focus {
+    background: rgba(255,255,255,0.25);
+    border-color: #ff4d4d;
+}
+
+/* MENU GRID */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+.card img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+.card h3 { font-size: 14px; color: #1a1a1a; margin-bottom: 4px; }
+.card .price { font-weight: 700; color: #ff4d4d; font-size: 15px; margin-bottom: 2px; }
+.card .cat { font-size: 11px; color: #aaa; margin-bottom: 8px; }
+.card button {
+    width: 100%;
+    padding: 8px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.card button:hover { background: #e63939; }
+
+/* SLOT BAR */
+.slot-bar {
+    background: rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: white;
+    font-size: 14px;
+}
+.slot-bar select {
+    width: auto;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border-color: rgba(255,255,255,0.3);
+    margin: 0;
+}
+.slot-bar select option { background: #1a1a2e; color: white; }
+
+/* ─────────────────────────────────────────
+   PAYMENT PAGE
+───────────────────────────────────────── */
+.order-summary {
+    background: #fff8f8;
+    border: 1.5px solid #ffe0e0;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+.order-summary p { font-size: 15px; margin: 4px 0; color: #333; }
+
+.pay-methods { text-align: left; margin-bottom: 14px; }
+.pay-methods p { font-weight: 600; margin-bottom: 8px; color: #333; }
+.radio-label {
+    display: block;
+    padding: 10px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #444;
+    transition: border 0.2s;
+}
+.radio-label:hover { border-color: #ff4d4d; }
+
+.coupon-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.coupon-row input { margin: 0; flex: 1; }
+.coupon-btn {
+    padding: 12px 16px;
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+}
+.coupon-btn:hover { background: #0f3460; }
+
+.coupon-msg { font-size: 13px; margin-bottom: 8px; min-height: 18px; }
+.final-amt { font-size: 20px; font-weight: 700; color: #ff4d4d; margin: 12px 0; }
+
+/* ─────────────────────────────────────────
+   TOKEN PAGE
+───────────────────────────────────────── */
+.token-display {
+    background: linear-gradient(135deg, #ff4d4d, #ff8c42);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 16px 0;
+    color: white;
+}
+.token-number {
+    font-size: 56px;
+    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+}
+.token-label { font-size: 13px; opacity: 0.85; margin-top: 6px; }
+
+.token-details {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 14px;
+    text-align: left;
+    margin-bottom: 16px;
+}
+.token-details p { padding: 6px 0; font-size: 14px; color: #333; border-bottom: 1px solid #eee; }
+.token-details p:last-child { border-bottom: none; }
+
+.token-btns { display: flex; flex-direction: column; gap: 8px; }
+
+.status-Preparing { color: #f59e0b; font-weight: 700; }
+.status-AlmostReady { color: #3b82f6; font-weight: 700; }
+.status-Ready { color: #10b981; font-weight: 700; }
+.status-Cancelled { color: #ef4444; font-weight: 700; }
+
+/* ─────────────────────────────────────────
+   HISTORY PAGE
+───────────────────────────────────────── */
+.history-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.history-card p { font-size: 14px; color: #333; margin: 3px 0; }
+.badge {
+    background: #fff3cd;
+    color: #856404;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ─────────────────────────────────────────
+   ADMIN PAGE
+───────────────────────────────────────── */
+.admin-body {
+    min-height: 100vh;
+    background: #f0f2f5;
+}
+
+.admin-navbar {
+    background: #1a1a2e;
+    color: white;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+}
+
+.admin-container {
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.admin-section {
+    background: white;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.admin-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #1a1a2e;
+    margin-bottom: 14px;
+}
+
+.revenue-bar {
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.admin-card {
+    background: #f9f9f9;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.7;
+}
+.admin-card.unavailable {
+    background: #fff5f5;
+    border-color: #ffd0d0;
+    opacity: 0.8;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #fff3cd;
+    color: #856404;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+.avail-badge {
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 8px;
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+.btn-row button {
+    padding: 7px 12px;
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+}
+.btn-row button:hover { background: #0f3460; }
+.btn-green { background: #10b981 !important; }
+.btn-green:hover { background: #059669 !important; }
+.btn-red { background: #ef4444 !important; }
+.btn-red:hover { background: #dc2626 !important; }
+
+.refresh-btn {
+    padding: 8px 16px;
+    background: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 14px;
+    transition: background 0.2s;
+}
+.refresh-btn:hover { background: #e0e0e0; }
+
+.coupon-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+.coupon-form input {
+    flex: 1;
+    min-width: 130px;
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 13px;
+}
+
+/* ─────────────────────────────────────────
+   NOTIFICATION TOAST
+───────────────────────────────────────── */
+.notify {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #10b981;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    z-index: 9999;
+    animation: slideIn 0.3s ease;
+}
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Token & Tray — Your Token</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+<div class="login-bg-overlay">
+<div class="login-box">
+
+    <h2>🎟️ Your Token</h2>
+
+    <div class="token-display">
+        <div id="tokenNum" class="token-number">...</div>
+        <p class="token-label">Show this at counter</p>
+    </div>
+
+    <div class="token-details">
+        <p id="tokItem">🍽️ —</p>
+        <p id="tokPrice">💰 —</p>
+        <p id="tokSlot">🕐 —</p>
+        <p id="tokWait">⏱️ —</p>
+        <p id="tokStatus" class="status-preparing">📊 —</p>
+    </div>
+
+    <div class="token-btns">
+        <button class="login-btn" onclick="window.location.href='history.html'">📜 Order History</button>
+        <button class="back-btn" onclick="cancelOrder()">❌ Cancel Order</button>
+        <button class="back-btn" onclick="window.location.href='menu.html'">🍽️ Order More</button>
+    </div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Token & Tray — Payment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+<div class="login-bg-overlay">
+<div class="login-box wide">
+
+    <h2>💳 Payment</h2>
+
+    <div class="order-summary">
+        <p id="payItem">Item: —</p>
+        <p id="payPrice">Price: —</p>
+    </div>
+
+    <div class="pay-methods">
+        <p>Select Payment Method</p>
+        <label class="radio-label"><input type="radio" name="pay" checked> 📱 UPI</label>
+        <label class="radio-label"><input type="radio" name="pay"> 💳 Card</label>
+        <label class="radio-label"><input type="radio" name="pay"> 💵 Cash on Pickup</label>
+    </div>
+
+    <div class="coupon-row">
+        <input type="text" id="couponInput" placeholder="🎟️ Coupon code (e.g. WELCOME10)" />
+        <button class="coupon-btn" onclick="applyCoupon()">Apply</button>
+    </div>
+    <p id="couponMsg" class="coupon-msg"></p>
+
+    <p id="finalAmt" class="final-amt">Total: —</p>
+
+    <button class="login-btn" onclick="pay()">Confirm & Place Order →</button>
+    <button class="back-btn" onclick="window.location.href='menu.html'">← Back to Menu</button>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Token & Tray — Admin Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-navbar">
+    <div>🛡️ Admin Panel — Token & Tray</div>
+    <button class="nav-btn logout" onclick="logout()">Logout</button>
+</div>
+
+<div class="admin-container">
+
+    <!-- REVENUE -->
+    <div class="admin-section revenue-bar">
+        <p id="revenue">Loading revenue...</p>
+    </div>
+
+    <!-- ORDERS -->
+    <div class="admin-section">
+        <h3>📦 All Orders</h3>
+        <button class="refresh-btn" onclick="loadAdminOrders(); loadRevenue();">🔄 Refresh</button>
+        <div id="adminOrders">Loading orders...</div>
+    </div>
+
+    <!-- MENU MANAGEMENT -->
+    <div class="admin-section">
+        <h3>🍽️ Menu Management</h3>
+        <p class="hint">Toggle items on/off (e.g. "No Dosa today")</p>
+        <div id="adminMenu">Loading menu...</div>
+    </div>
+
+    <!-- COUPONS -->
+    <div class="admin-section">
+        <h3>🎟️ Coupons</h3>
+
+        <div class="coupon-form">
+            <input type="text" id="newCode" placeholder="Coupon Code (e.g. SAVE30)" />
+            <input type="number" id="newDiscount" placeholder="Discount %" min="1" max="100" />
+            <input type="number" id="newLimit" placeholder="Usage Limit (default 100)" />
+            <button class="btn-green" onclick="addCoupon()">➕ Add Coupon</button>
+        </div>
+
+        <div id="adminCoupons">Loading coupons...</div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
